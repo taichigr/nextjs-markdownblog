@@ -1,8 +1,13 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { NextSeo } from "next-seo";
 
 export default function post({ post }) {
   return (
     <>
+      <NextSeo
+        title={post.title}
+        description={post.body}
+      />
       <h1>POST</h1>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
